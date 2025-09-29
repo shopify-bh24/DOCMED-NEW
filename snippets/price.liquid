@@ -5,29 +5,36 @@
     - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
     - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
     - price_class: {String} Adds a price class to the price element (optional)
+    - allow_add_cart: {Boolean} Controls whether Add-to-Cart button should render (optional, default false)
     Usage:
-    {% render 'price', product: product %}
+    {% render 'price', product: product, allow_add_cart: true %}
 {% endcomment %}
+
 {%- liquid
-	if use_variant
-		assign target = product.selected_or_first_available_variant
-	else
-		assign target = product
-	endif
-	assign compare_at_price = target.compare_at_price
-	assign price = target.price | default: 40300
-	assign price_min = product.price_min
+  assign allow_add_cart = allow_add_cart | default: false
+
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 40300
+  assign price_min = product.price_min
   assign price_max = product.price_max
-	assign available = target.available | default: false
-	assign money_price = price | money
-	assign money_price_min = price_min | money
+  assign available = target.available | default: false
+  assign money_price = price | money
+  assign money_price_min = price_min | money
   assign money_price_max = price_max | money
-	if settings.currency_code_enabled
-		assign money_price = price | money_with_currency
-		assign money_price_min = price_min | money_with_currency
+
+  if settings.currency_code_enabled
+    assign money_price = price | money_with_currency
+    assign money_price_min = price_min | money_with_currency
     assign money_price_max = price_max | money_with_currency
-	endif
+  endif
 -%}
+
 {% comment %} 
 if product.price_varies
 		assign money_price = 'products.product.price.from_price_html' | t: price: money_price
@@ -64,6 +71,46 @@ if product.price_varies
       {%- else -%}
         <span class="price-item price-item--regular">{{ money_price }}</span>
       {%- endif -%}
+
+      {% if allow_add_cart %}
+        <button 
+          id="{{ product_form_id }}-submit"
+          type="submit"
+          name="add"
+          class="add-to-cart__submit button button--primary"
+          aria-haspopup="dialog"
+          aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+          aria-live="polite"
+          data-sold-out-message="true"
+        >
+          {% comment %} {%- if card_product.selected_or_first_available_variant.available -%} {% endcomment %}
+            <span class="cus-card-svg">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          {% comment %} {%- else -%}
+            <span class="cus-card-svg">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          {%- endif -%} {% endcomment %}
+      
+          {%- if horizontal_quick_add -%}
+            <span class="icon-wrap">{% render 'icon-plus' %}</span>
+          {%- endif -%}
+      
+          <div class="loading-overlay__spinner hidden">
+            <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+            </svg>
+          </div>
+        </button>
+      {% endif %}
+      
     </div>
 		<div class="price__sale">
 			<span class="price-item price-item--sale price-item--last">

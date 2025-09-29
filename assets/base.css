@@ -5098,6 +5098,10 @@ html body .wbprofpay .wbprofpayinr .list-payment{
 }
 }
 
+.cus-tabs-blc-wrp div span{
+    line-height: 1.2 !important;
+}
+
 
 /* ---------------------------search input ios ------------------- */
 

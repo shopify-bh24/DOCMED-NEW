@@ -39,6 +39,37 @@
   .search__button .icon {
     height: 1.8rem;
   }
+
+  .stars{
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-right: 6px;
+    color: transparent;             
+    -webkit-text-stroke: 1px #FFD700; 
+  }
+
+  .card__heading a{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;   /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.6em;      
+    max-height: 2.8em;       /* = 1.4em × 2 lines */
+    min-height: 2.8em; 
+  }
+
+  .card__heading {
+    font-size: 12px !important;
+    font-weight: normal;
+    color: rgba(1, 31, 45);
+  }
+
+  .card_sale_price {
+    font-size: 12px;
+    color: #58BFC6 !important;
+    font-weight: 600;
+  }
 </style>
 {%- liquid
   assign sort_by = search.sort_by | default: search.default_sort_by
@@ -82,7 +113,7 @@
           {{- 'general.search.search' | t -}}
         {%- endif -%}
       </h1>
-      <div class="template-search__search">
+      {% comment %} <div class="template-search__search">
         {%- if settings.predictive_search_enabled -%}
           <predictive-search class="search-modal__form" data-search-active-class="ps_hideactive" data-loading-text="{{ 'accessibility.loading' | t }}">
         {%- endif -%}
@@ -182,7 +213,7 @@
         {%- if settings.predictive_search_enabled -%}
           </predictive-search>
         {%- endif -%}
-      </div>
+      </div> {% endcomment %}
       {%- if search.performed -%}
         {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
           {%- if search.results_count > 0 -%}
@@ -196,7 +227,7 @@
     </div>
     {%- if search.performed -%}
       {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' and search.filters != empty -%}
-        <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden {% if section.settings.filter_type == 'vertical' %}wbverticalcoll {% endif %}">
+        {% comment %} <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden {% if section.settings.filter_type == 'vertical' %}wbverticalcoll {% endif %}">
           {%- if section.settings.enable_filtering -%}<div class="wbblank"><div class="wbblankinner"></div></div>{%- endif -%}
           <form class="facets-vertical-form" id="FacetSortForm">
             <div class="facet-filters sorting caption">
@@ -237,7 +268,7 @@
               </div>
             </div>
           </form>
-        </facet-filters-form>
+        </facet-filters-form> {% endcomment %}
       {%- endif -%}
       <div {% if section.settings.filter_type == 'vertical' %} class="facets-vertical page-width"{% endif %}>
         {%- if search.filters != empty -%}
@@ -451,14 +482,20 @@
       "type": "checkbox",
       "id": "show_vendor",
       "default": false,
-      "label": "t:sections.main-search.settings.show_vendor.label"
+      "label": "t:sections.featured-collection.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sku",
+      "default": false,
+      "label": "Show SKU"
     },
     {
       "type": "checkbox",
       "id": "show_rating",
       "default": false,
-      "label": "t:sections.main-search.settings.show_rating.label",
-      "info": "t:sections.main-search.settings.show_rating.info"
+      "label": "t:sections.featured-collection.settings.show_rating.label",
+      "info": "t:sections.featured-collection.settings.show_rating.info"
     },
     {
       "type": "checkbox",

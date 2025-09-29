@@ -77,7 +77,7 @@
 </ul>
 {% endif %}
 {% comment %} category end {% endcomment %}
-  {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
+  {% comment %} {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
     <facet-filters-form class="facets small-hide">
       <form id="FacetFiltersForm" class="{% if filter_type == 'horizontal' %}facets__form{% else %}facets__form-vertical{% endif %}{% unless enable_filtering %} wbdrawerfacet {% endunless %}">
         {%- if results.terms -%}
@@ -505,7 +505,7 @@
         </form>
       </facet-filters-form>
     {%- endif -%}    
-  {%- endif -%}
+  {%- endif -%} {% endcomment %}
   {% comment %}  Drawer and mobile filter {% endcomment %}
   <menu-drawer class="mobile-facets__wrapper{% if filter_type == 'horizontal' or filter_type == 'vertical' %} medium-hide large-up-hide{% endif %} {% unless enable_filtering %} medium-hide large-up-hide{% endunless %}" data-breakpoint="mobile">
     <details class="mobile-facets__disclosure disclosure-has-popup">

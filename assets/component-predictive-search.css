@@ -268,6 +268,8 @@ button.predictive-search__item.predictive-search__item--term {
 .search_default ul.grid.product-grid.contains-card.contains-card--product .card, #predictive-search-results-groups-wrapper .search_result-products .card{
   flex-direction: row;
   align-items: center;
+  border: none;
+  box-shadow: 2px 1px 8px 3px #0003;
 }
 .search-left-part .card__inner.wbimgblock, #predictive-search-results-groups-wrapper .search_result-products .card__inner,
 .search_blog-wrapper .card__inner, .search_result-articles.search__results .card__inner {

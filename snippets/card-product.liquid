@@ -29,7 +29,7 @@
       endif
   -%}
   <div class="card-wrapper wbproduct-container product-card-wrapper {{ settings.card_text_alignment }}">
-    <div class=" card card--{{ card_style }}
+    <div class="sdadsa card card--{{ card_style }}
         {%- if card_product.featured_media == blank and card_style == 'card' -%} blank__image {% endif %}
         {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
         {% if card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
@@ -760,28 +760,20 @@
                             class="add-to-cart__submit button button--primary" aria-haspopup="dialog"
                             aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                             aria-live="polite"
-                            data-sold-out-message="true" {% if card_product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
-                        {%- if card_product.selected_or_first_available_variant.available -%}
-                            
-                          {% comment %} <span>{{ 'products.product.add_to_cart' | t }}</span> {% endcomment %}
-                            {% comment %} =====================================custom btns================= {% endcomment %}
-                             <span class="cus-card-svg"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-                   
-                        {%- else -%}
-                            {% comment %} <span>{{ 'products.product.sold_out' | t }}</span> {% endcomment %}
-                              {% comment %} =====================================custom btns================= {% endcomment %}
-                             <span class="cus-card-svg"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-                   
-                        {%- endif -%}
-                        {% comment %} <span class="sold-out-message hidden">{{ 'products.product.sold_out' | t }}</span> {% endcomment %}
-                        {%- if horizontal_quick_add -%}
-                            <span class="icon-wrap">{% render 'icon-plus' %}</span>
-                        {%- endif -%}
-                        <div class="loading-overlay__spinner hidden">
-                            <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"> <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle> </svg>
-                        </div>
+                            data-sold-out-message="true">
+                      {%- if card_product.selected_or_first_available_variant.available -%}
+                        <span class="cus-card-svg"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                      {%- else -%}
+                        <span class="cus-card-svg"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                      {%- endif -%}
+                      {%- if horizontal_quick_add -%}
+                        <span class="icon-wrap">{% render 'icon-plus' %}</span>
+                      {%- endif -%}
+                      <div class="loading-overlay__spinner hidden">
+                        <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"> <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle> </svg>
+                      </div>
                     </button>
                 {%- endform -%}
               </product-form>
@@ -880,35 +872,16 @@
                       aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                       aria-live="polite"
                       data-sold-out-message="true"
-                      
-                       {% comment %} {% if card_product.selected_or_first_available_variant.available != true %}
-                        disabled
-                      {% endif %}  {% endcomment %}
-
                     >
-                      {% comment %} <span>
-                        {%- if card_product.selected_or_first_available_variant.available -%}
-                          {{ 'products.product.add_to_cart' | t }}
-                          {{ 'products.product.add_to_cart' | t }}
-                        {%- else -%}
-                          {{ 'products.product.sold_out' | t }}
-                        {%- endif -%}
-                      </span> {% endcomment %}
-                       {% comment %} ===========================custom btns part========================= {% endcomment %}
-
-                    <span class="cus-card-svg"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-                            <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                      <span class="cus-card-svg"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
                    
-                            
-                      {% comment %} <span class="sold-out-message hidden">
-                        {{ 'products.product.sold_out' | t }}
-                      </span> {% endcomment %}
                       {%- if horizontal_quick_add -%}
                         <span class="icon-wrap">{% render 'icon-plus' %}</span>
                       {%- endif -%}
                       <div class="loading-overlay__spinner hidden">
                             <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"> <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle> </svg>
-                        </div>
+                      </div>
                     </button>
                   {%- endform -%}
                 </product-form>
