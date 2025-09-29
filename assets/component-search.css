@@ -14,7 +14,7 @@ header .search-modal__content .search-modal__close-button.link {
   top: auto;
 }
 .template-search__search .search__input.field__input{
-  background: rgba(var(--color-button-text));
+  /* background: rgba(var(--color-button-text)); */
 }
 .reset__button.field__button{
   top: var(--inputs-border-width);
@@ -32,7 +32,7 @@ header .search-modal__content .search-modal__close-button.link {
   padding-right: 9.8rem;
 }
 main-search .field__button{
-  background: rgba(var(--color-button-text));
+  /* background: rgba(var(--color-button-text)); */
   border-radius: var(--inputs-radius-outset);
   top: var(--inputs-border-width);
 }

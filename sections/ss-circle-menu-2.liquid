@@ -135,21 +135,21 @@ For inquiries or permissions, contact daniel@section.store
 .circle-prev-{{ section.id }},
 .circle-next-{{ section.id }} {
   position: absolute;
-  top: 50%;
+  top: 40%;
   /* transform: translateY(-50%); */
-  z-index: 10;
+  z-index: 3;
   width: 40px;
   height: 40px;
-  background-color: #000;
+  background-color: #1D2E40 !important;
   color: #fff;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  opacity: 0.8;
+  /* opacity: 0.8; */
   transition: opacity 0.2s;
 }
 
@@ -393,40 +393,60 @@ For inquiries or permissions, contact daniel@section.store
     }
   }
 </style>
-
 <div class="section-{{ section.id }} circle-menu-{{ section.id }}" style="background-color:{{ background_color }}; background-image: {{ background_gradient }};">
   <div class="page-width">
-  <div class="section-{{ section.id }}-settings">
-    <div class="circle-slider-wrapper-{{ section.id }}" style="position: relative; padding: 0 20px;">
-    <div class="circle-menu-slider-{{ section.id }} swiper preview ">
-   
-      <div class="swiper-wrapper">
+    <div class="section-{{ section.id }}-settings">
+      <div class="circle-slider-wrapper-{{ section.id }}" style="position: relative; padding: 0 20px;">
         
-        {% for block in section.blocks %}
-          <{% if block.settings.url  != blank %}a href="{{ block.settings.url }}"{% else %}div{% endif %} class="swiper-slide circle-menu-item-{{ section.id }}"> 
-              {% if tag_bottom %}
-                <p class="circle-menu-title-{{ section.id }} circle-menu-title-{{ block.id }}">{{ block.settings.title }}</p>
-              {% endif %}
-              <div class="circle-menu-image-{{ section.id }}">
-                {% if block.settings.image != blank %}
-                  <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}">
-                {% else %}
-                  {{ 'image' | placeholder_svg_tag }}
+        <div class="circle-menu-slider-{{ section.id }} swiper preview">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <{% if block.settings.url  != blank %}a href="{{ block.settings.url }}"{% else %}div{% endif %} class="swiper-slide circle-menu-item-{{ section.id }}"> 
+                {% if tag_bottom %}
+                  <p class="circle-menu-title-{{ section.id }} circle-menu-title-{{ block.id }}">{{ block.settings.title }}</p>
                 {% endif %}
-              </div>
-              <p class="circle-menu-tag-{{ section.id }} circle-menu-tag-{{ block.id }}">{{ block.settings.tag }}</p>
-              {% unless tag_bottom %} 
-                <p class="circle-menu-title-{{ section.id }} circle-menu-title-{{ block.id }}">{{ block.settings.title }}</p>
-              {% endunless %}              
-            </{% if block.settings.url != blank %}a{% else %}div{% endif %}>        
-        {% endfor %}
+                
+                <div class="circle-menu-image-{{ section.id }}">
+                  {% if block.settings.image != blank %}
+                    <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}">
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %}
+                </div>
+                
+                <p class="circle-menu-tag-{{ section.id }} circle-menu-tag-{{ block.id }}">{{ block.settings.tag }}</p>
+                
+                {% unless tag_bottom %} 
+                  <p class="circle-menu-title-{{ section.id }} circle-menu-title-{{ block.id }}">{{ block.settings.title }}</p>
+                {% endunless %}              
+              </{% if block.settings.url != blank %}a{% else %}div{% endif %}>        
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Updated Arrow Buttons -->
+        <div class="slider-buttons no-js-hidden">
+          <button
+            type="button"
+            class="slider-button slider-button--prev button circle-prev-{{ section.id }}"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            <span>{% render 'icon-caret' %}</span>
+          </button>
+          <button
+            type="button"
+            class="slider-button slider-button--next button circle-next-{{ section.id }}"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            <span>{% render 'icon-caret' %}</span>
+          </button>
+        </div>
+
       </div>
     </div>
-             <div class="swiper-button-prev circle-prev-{{ section.id }}"> </div>
-  <div class="swiper-button-next circle-next-{{ section.id }}"></div>
-             </div>
   </div>
-</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

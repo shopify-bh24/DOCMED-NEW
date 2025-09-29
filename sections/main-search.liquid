@@ -109,18 +109,18 @@
                     >
                     <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
                     <input name="options[prefix]" type="hidden" value="last">
-                     <button type="reset" class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" aria-label="{{ 'general.search.reset' | t }}">
+                     <button style="background: none; !important" type="reset" class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}" aria-label="{{ 'general.search.reset' | t }}">
                       <svg class="icon icon-close" aria-hidden="true" focusable="false">
                         <use xlink:href="#icon-reset"/>
                       </svg>
                     </button>
-                    <button class="wbsclose reset__button field__button focus-inset hidden" aria-label="{{ 'general.search.reset' | t }}">
+                    <button style="background: none;" class="wbsclose reset__button field__button focus-inset hidden" aria-label="{{ 'general.search.reset' | t }}">
                       <svg class="icon icon-close" aria-hidden="true" focusable="false">
                         <use xlink:href="#icon-reset"/>
                       </svg>
                     </button>
                     </div>
-                    <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                    <button type="submit" style="background: none;" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
                       <span>
                     <svg class="icon icon-search" aria-hidden="true" focusable="false">
                       <use xlink:href="#icon-search"/>

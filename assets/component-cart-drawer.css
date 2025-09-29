@@ -85,9 +85,9 @@
 .cart__footer-wrapper .wbshipinner span::after {
   background: linear-gradient(90deg, transparent 0, rgba(var(--color-background)) 10%);
 }
-.wbshipinner b {
+/* .wbshipinner b {
     animation: shipColor 3s linear infinite;
-}
+} */
 .drawer__inner .wbship {
   margin-top: 5px;
 }
@@ -422,7 +422,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 .drawer__header {
   display: block;
   background: rgba(var(--color-button),var(--alpha-button-background));
-  color: rgb(var(--color-button-text));
+  /* color: rgb(var(--color-button-text)); */
   padding: 15px 20px 15px;
 }
 .wbsub_head .wbsub_heading {
@@ -674,9 +674,7 @@ cart-drawer-items dl.item-price-wrapper{
 .wbship_wrapper{
   word-break: break-word;
 }
-.drawer .cart-drawer .progress{
-  background-color: rgb(var(--color-button-text));  
-}
+
 .progress {
   position: relative;
   height: 6px;
@@ -689,7 +687,7 @@ cart-drawer-items dl.item-price-wrapper{
   position: absolute;
   top: 0;
   bottom: 0;
-  background-color: var(--color-wbprogscolor);
+  background-color: #1d2e40;
   transition: width 1.15s ease-in-out;
   display: block;
   min-width: 30px;

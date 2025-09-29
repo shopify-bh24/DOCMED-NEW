@@ -1580,7 +1580,7 @@ button.shopify-payment-button__button--unbranded,
     position: relative;
     font-style: var(--font-body-style);
 }
-.button,
+/* .button, */
 .shopify-challenge__button,
 .customer button,
 button.shopify-payment-button__button--unbranded {
@@ -1790,9 +1790,9 @@ product-form .button:hover:not([disabled]) svg path{
     background: rgb(var(--color-bg-button-hover));
     transition: all .35s;
 }
-.button:hover, button.button:hover, a.button:hover{
+/* .button:hover, button.button:hover, a.button:hover{
     color: rgb(var(--color-button-hover-text));
-}
+} */
 .button:hover:after, button.button:hover:after, a.button:hover:after{
     width: 100%;
 }
@@ -3869,9 +3869,9 @@ a {
     text-decoration: none;
     transition: all var(--duration-long) ease;
 }
-a:hover {
+/* a:hover {
     color: rgb(var(--color-link-hover));
-}
+} */
 .wb_gap_image a:not([class]),
   .cust-page a:not([class]),
   .recent-posts-list a:not([class]),
@@ -5264,9 +5264,9 @@ button:has(.cus-card-svg){
     width: fit-content !important;
     min-width: fit-content;
     margin-right: 0px;
-     display: flex; 
+    display: flex; 
     justify-self: end; 
-    padding:0 12px !important;
+    padding:12px !important;
 }
 
 
