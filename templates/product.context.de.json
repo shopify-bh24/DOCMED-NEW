@@ -1,0 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.json",
+  "context": {
+    "market": "de"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "65491c3f-abb9-4bd5-9728-1b439626a36f",
+        "title_jnyBi3",
+        "price",
+        "variant_picker_PMkhTg",
+        "buy_buttons",
+        "custom_liquid_xXTqR6"
+      ]
+    }
+  }
+}
