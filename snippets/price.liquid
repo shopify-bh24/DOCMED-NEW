@@ -1,3 +1,12 @@
+<style>
+
+  @media screen and (max-width: 450px) {
+    .button:has(.cus-card-svg){
+      padding: 8px !important;
+    }
+  } 
+</style>
+
 {% comment %}
     Renders a list of product's price (regular, sale)
     Accepts:
@@ -72,44 +81,27 @@ if product.price_varies
         <span class="price-item price-item--regular">{{ money_price }}</span>
       {%- endif -%}
 
-      {% if allow_add_cart %}
-        <button 
-          id="{{ product_form_id }}-submit"
-          type="submit"
-          name="add"
-          class="add-to-cart__submit button button--primary"
-          aria-haspopup="dialog"
-          aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
-          aria-live="polite"
-          data-sold-out-message="true"
-        >
-          {% comment %} {%- if card_product.selected_or_first_available_variant.available -%} {% endcomment %}
+      {% if allow_add_cart and product.selected_or_first_available_variant %}
+        <form method="post" action="/cart/add" class="product-card-form">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+          <button 
+            type="submit"
+            name="add"
+            formaction="/cart"
+            class="header_search_add_to_cart_button add-to-cart__submit button button--primary "
+            aria-label="{{ 'products.product.add_to_cart' | t }}"
+          >
             <span class="cus-card-svg">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
             </span>
-          {% comment %} {%- else -%}
-            <span class="cus-card-svg">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </span>
-          {%- endif -%} {% endcomment %}
-      
-          {%- if horizontal_quick_add -%}
-            <span class="icon-wrap">{% render 'icon-plus' %}</span>
-          {%- endif -%}
-      
-          <div class="loading-overlay__spinner hidden">
-            <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-            </svg>
-          </div>
-        </button>
+          </button>
+        </form>
       {% endif %}
+      
       
     </div>
 		<div class="price__sale">
@@ -142,14 +134,46 @@ if product.price_varies
           </span>
   		</small>
     {% endif %}
-		{% comment %} {%- if show_badges and product.price -%}
-      <div class="wbvariantbadges"> 
-        <span class="badge price__badge-sale">
-          {{ 'products.product.on_sale' | t }}
-        </span>
-        <span class="badge price__badge-sold-out">
-          {{ 'products.product.sold_out' | t }}
-        </span>
-      </div>
-    {%- endif -%} {% endcomment %}
 </div>
+
+<script>
+document.addEventListener('click', function(e) {
+  const button = e.target.closest('.add-to-cart__submit');
+  if (!button) return;
+
+  e.preventDefault();
+
+  const form = button.closest('form');
+  const variantId = form?.querySelector('input[name="id"]')?.value;
+  if (!variantId) return;
+
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: variantId, quantity: 1 })
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log('Added to cart:', data);
+
+    // 🔹 Step 1: Fetch new cart state
+    return fetch('/cart.js').then(res => res.json());
+  })
+  .then(cart => {
+    console.log('Cart updated:', cart);
+
+    // 🔹 Step 2: Update drawer (depends on theme)
+
+    // Dawn + most OS2.0 themes
+    document.dispatchEvent(new CustomEvent('cart:refresh', { detail: cart }));
+
+    // If your theme has cart-drawer element
+    const drawer = document.querySelector('cart-drawer');
+    if (drawer && typeof drawer.renderContents === 'function') {
+      drawer.renderContents(cart); // reloads cart HTML
+    }
+  })
+  .catch(err => console.error('Error adding to cart:', err));
+});
+
+</script>

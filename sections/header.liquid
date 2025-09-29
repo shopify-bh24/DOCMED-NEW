@@ -1339,7 +1339,7 @@ body .wbhuserleft span, .wbcarthtotal span,body .wbhcart .wbcarthtotal span:nth-
                       </div> 
                     </div>
                     <div class="default--search page-width predictive-search predictive-search--header hidden" tabindex="-1">
-                      <div class="wbsearch_inner color-{{ settings.color_schemesearch }} gradient">
+                      <div class="1 wbsearch_inner color-{{ settings.color_schemesearch }} gradient">
                         {% render 'search-quick-links' %}
                           {% unless settings.search_collection == blank and settings.collection_list == blank and settings.search_blog == blank %}
                         <div class="search_default{% if settings.collection_list != blank and settings.search_collection != blank and settings.search_blog != blank %} search-col-3{% elsif settings.collection_list != blank or settings.search_collection != blank or settings.search_blog != blank %} search-col-2{% endif %}">
@@ -1456,8 +1456,8 @@ body .wbhuserleft span, .wbcarthtotal span,body .wbhcart .wbcarthtotal span:nth-
                     </svg>
                   </div> 
                 </div>
-                <div class="default--search page-width predictive-search predictive-search--header hidden" tabindex="-1">
-                  <div class="wbsearch_inner color-{{ settings.color_schemesearch }} gradient">
+                <div class="default--search page-width predictive-search predictive-search--header hidden" tabindex="-1" style="overflow: scroll;">
+                  <div class="2 wbsearch_inner color-{{ settings.color_schemesearch }} gradient">
                     {% render 'search-quick-links' %}
                       {% unless settings.search_collection == blank and settings.collection_list == blank and settings.search_blog == blank %}
                     <div class="search_default{% if settings.collection_list != blank and settings.search_collection != blank and settings.search_blog != blank %} search-col-3{% elsif settings.collection_list != blank or settings.search_collection != blank or settings.search_blog != blank %} search-col-2{% endif %}">
@@ -1632,7 +1632,7 @@ body .wbhuserleft span, .wbcarthtotal span,body .wbhcart .wbcarthtotal span:nth-
                           </div>
                         </div>
                         <div class="default--search page-width predictive-search predictive-search--header hidden" tabindex="-1">
-                          <div class="wbsearch_inner color-{{ settings.color_schemesearch }} gradient">
+                          <div class="3 wbsearch_inner color-{{ settings.color_schemesearch }} gradient">
                               {% render 'search-quick-links' %}
                               {% unless settings.search_collection == blank and settings.collection_list == blank and settings.search_blog == blank %}
                               <div class="search_default{% if settings.collection_list != blank and settings.search_collection != blank and settings.search_blog != blank %} search-col-3{% elsif settings.collection_list != blank or settings.search_collection != blank or settings.search_blog != blank %} search-col-2{% endif %}">
@@ -2491,7 +2491,7 @@ body .wbhuserleft span, .wbcarthtotal span,body .wbhcart .wbcarthtotal span:nth-
                     </svg>
                   </div> 
                 </div>
-                <div class="default--search page-width predictive-search predictive-search--header hidden" tabindex="-1">
+                <div class="default--search page-width predictive-search predictive-search--header hidden" tabindex="-1" style="overflow: hidden;">
                   <div class="wbsearch_inner color-{{ settings.color_schemesearch }} gradient">
                     {% render 'search-quick-links' %}
                       {% unless settings.search_collection == blank and settings.collection_list == blank and settings.search_blog == blank %}

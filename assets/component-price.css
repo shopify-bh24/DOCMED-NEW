@@ -35,7 +35,9 @@
 }
 .price--sold-out .price__availability,
 .price__regular {
-  display: block;
+  display: flex ;
+  justify-content: space-between;
+  align-items: end;
 }
 .price__sale,
 .price__availability,
