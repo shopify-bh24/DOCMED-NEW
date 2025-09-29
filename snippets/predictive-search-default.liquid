@@ -1,19 +1,10 @@
-<style>
-  .search_result_preview_card .price__regular{
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding-right: 1rem;
-  }
-</style>
-
 {%- unless coll_products == blank -%}
   <div class="predictive-search__result-group seachbar-left search-default_data search-left-part">
     <div class="heading-wrapper">
       <div class="default-content-heading">{{- 'wbcustomlabel.wballtext.popular_products' | t -}}</div>
       <a href="{{ routes.all_products_collection_url }}" class="default-heading-link">{{- 'wbcustomlabel.wballtext.all_products' | t -}}</a>
     </div>
-    <ul class="search_result_preview_card grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %}">
+    <ul class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %}">
       {%- assign collection = collections[coll_products] -%}
       {%- for product in collection.products limit: 7 -%}
         <li class="product__col_wrapper">
@@ -125,7 +116,7 @@
                     {% if settings.predictive_search_show_price == true %}
                       <div class="card-information">
                         <div class="no-js-hidden wbhprice" id="price-{{ section.id }}-{{ product.id }}" {{ block.shopify_attributes }}>
-                          {%- render 'price', product: product, use_variant: false, show_badges: false, from_varies: true, allow_add_cart: true -%}
+                          {%- render 'price', product: product, use_variant: false, show_badges: false, from_varies: true -%}
                         </div>
                       </div>
                     {% endif %}
