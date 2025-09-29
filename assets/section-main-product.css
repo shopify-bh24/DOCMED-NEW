@@ -469,6 +469,8 @@ fieldset.product-form__input .form__label {
 }
 .product-form__submit {
     margin-bottom: 1rem;
+    color: white;
+    background: #1d2e40;
 }
 .product-form__submit[aria-disabled="true"] + .shopify-payment-button,
 .product-form__submit[disabled] + .shopify-payment-button {

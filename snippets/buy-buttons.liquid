@@ -292,9 +292,7 @@
               type="submit"
               name="add"
               class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--primary{% else %}button--primary{% endif %}"
-              {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
-                disabled
-              {% endif %}
+
             >
               <span>
                 {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
@@ -329,7 +327,6 @@
           type="submit"
           name="add"
           class="product-form__submit button button--full-width button--primary"
-          disabled
         >
           {{ 'products.product.sold_out' | t }}
         </button>
