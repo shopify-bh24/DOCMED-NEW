@@ -541,7 +541,6 @@
           "type": "collection_block",
           "name": "Heimpflege",
           "settings": {
-            "image": "shopify://shop_images/2_bdd7b510-8a5f-447a-842f-c7eaba7c245d.png",
             "title": "Heimpflege",
             "item1_text": "Betten",
             "item1_link": "shopify://collections/betten",
@@ -561,7 +560,7 @@
           "type": "collection_block",
           "name": "Mobility",
           "settings": {
-            "image": "shopify://shop_images/1_040676a8-8196-457d-ad47-541cd6fe4c60.png",
+            "image": "shopify://shop_images/Design_ohne_Titel_2.png",
             "title": "Mobilitätshilfen",
             "item1_text": "Rollatoren",
             "item1_link": "shopify://collections/rollatoren",
