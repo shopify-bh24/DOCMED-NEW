@@ -501,7 +501,7 @@
           "type": "collection_block",
           "name": "Einsatzbereiche",
           "settings": {
-            "image": "shopify://shop_images/Altruan_Abfallsack_Collection_List_Abfallentsorgung.png",
+            "image": "shopify://shop_images/4_58628e90-eab0-4104-8865-8a7484c1e4c2.png",
             "title": "Einsatzbereiche",
             "item1_text": "Militär & Polizei",
             "item1_link": "shopify://collections/militar",
@@ -521,7 +521,7 @@
           "type": "collection_block",
           "name": "weitere Einsatzbereiche",
           "settings": {
-            "image": "shopify://shop_images/Altruan_Abfallsack_Collection_List_Abfallentsorgung.png",
+            "image": "shopify://shop_images/3_303cc846-b2c9-46c8-abd8-6d57f1ca558d.png",
             "title": "weitere Einsatzbereiche",
             "item1_text": "Physiotherapie",
             "item1_link": "shopify://collections/physiotherapie",
@@ -541,7 +541,7 @@
           "type": "collection_block",
           "name": "Heimpflege",
           "settings": {
-            "image": "shopify://shop_images/Altruan_Abfallsack_Collection_List_Abfallentsorgung.png",
+            "image": "shopify://shop_images/2_bdd7b510-8a5f-447a-842f-c7eaba7c245d.png",
             "title": "Heimpflege",
             "item1_text": "Betten",
             "item1_link": "shopify://collections/betten",
@@ -561,7 +561,7 @@
           "type": "collection_block",
           "name": "Mobility",
           "settings": {
-            "image": "shopify://shop_images/Altruan_Abfallsack_Collection_List_Abfallentsorgung.png",
+            "image": "shopify://shop_images/1_040676a8-8196-457d-ad47-541cd6fe4c60.png",
             "title": "Mobilitätshilfen",
             "item1_text": "Rollatoren",
             "item1_link": "shopify://collections/rollatoren",
