@@ -6,12 +6,12 @@
 %}
 {% assign section_id = section.id %}
   <div id="predictive-search-results" role="listbox" class="color-{{ settings.color_schemesearch }} gradient wbsearch_inner">
-    <div id="predictive-search-option-search-keywords" class="predictive-search__search-for-button">
+    {% comment %} <div id="predictive-search-option-search-keywords" class="predictive-search__search-for-button">
       <button class="predictive-search__item predictive-search__item--term link link--text animate-arrow" tabindex="-1" role="option" aria-selected="false">
         <span class="search-result-text" data-predictive-search-search-for-text>{{ 'templates.search.search_for' | t: terms: predictive_search.terms }}</span>
         {% render 'icon-arrow' %}
       </button>
-    </div>
+    </div> {% endcomment %}
     <div id="predictive-search-results-groups-wrapper" class="{% if first_column_results_size > 0 %}predictive-search__results-groups-wrapper{% endif %}{% if predictive_search.resources.products.size < 0 %} predictive-search__results-groups-wrapper--no-products{% endif %}{% if predictive_search.resources.queries.size < 0 and predictive_search.resources.collections.size < 0 and predictive_search.resources.pages.size < 0 and predictive_search.resources.articles.size < 0 %} predictive-search__results-groups-wrapper--no-suggestions{% endif %}"> 
       {%- if first_column_results_size > 0 -%}
         <div class="predictive-search__result-group seachbar-left content-border">
@@ -271,7 +271,7 @@
             </ul>
           </div>
         {%- endif -%}
-        {%- if predictive_search.resources.collections.size > 0 or predictive_search.resources.articles.size > 0 -%}
+        {% comment %} {%- if predictive_search.resources.collections.size > 0 or predictive_search.resources.articles.size > 0 -%}
           <div class="collection-and-articles">
             {%- if predictive_search.resources.collections.size > 0 -%}
               <div class="search_result-collections search__results">
@@ -360,7 +360,7 @@
               </div>
             {%- endif -%}
           </div>
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
       </div>
     </div>
     <div class="predictive-search__loading-state" aria-hidden="true">
