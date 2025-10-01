@@ -179,7 +179,7 @@
         "icon_size_mobile": 20,
         "btns_text_custom": false,
         "btns_text_font": "poppins_n4",
-        "btns_text_size": 20,
+        "btns_text_size": 16,
         "btns_text_size_mobile": 12,
         "btns_text_height": 60,
         "content_custom": false,
