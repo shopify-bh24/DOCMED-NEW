@@ -285,7 +285,7 @@
           "background_gradient": "",
           "text": "#011f2d",
           "button": "#1d2e40",
-          "button_label": "#1d2e40",
+          "button_label": "#ffffff",
           "button_hover": "#7fc7cf",
           "button_label_hover": "#121212",
           "secondary_button_label": "#121212",
