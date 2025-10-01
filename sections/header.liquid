@@ -296,10 +296,10 @@ body .wbhuserleft span, .wbcarthtotal span,body .wbhcart .wbcarthtotal span:nth-
             </span>
           </summary>
             <div id="menu-drawer" class="{{ flex-menu }} color-{{ section.settings.color__dropmenu }} gradient menu-drawer motion-reduce" tabindex="-1">
-              <ul class="mobilemenu-tab {{ tabmenu_hide }} {% if section.settings.menu == blank %} hidden {% endif %}">
+              {% comment %} <ul class="mobilemenu-tab {{ tabmenu_hide }} {% if section.settings.menu == blank %} hidden {% endif %}">
                 <li class="nav-item active" data-id="menu1">{{ 'sections.header.menu' | t }}</li>
                 <!-- <li class="nav-item" data-id="menu2">{{ 'wbcustomlabel.wballtext.category' | t }}</li> -->
-              </ul>
+              </ul> {% endcomment %}
               <div>
                 <div id="menu1" class="mobile_menu_tab menu-drawer__inner-container tab-pane fade {% if section.settings.menu != blank %} active {% endif %}">
                   <div class="menu-drawer__navigation-container">
