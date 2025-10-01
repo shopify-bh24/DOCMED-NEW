@@ -147,9 +147,7 @@
       {{ 'products.product.xr_button' | t }}
     </button>
   {%- endif -%}
-  {%- if media_count > 1
-    and section.settings.gallery_layout contains 'thumbnail'
-    or section.settings.mobile_thumbnails == 'show'
+  {%- if media_count > 0
   -%}
     <slider-component
       id="GalleryThumbnails-{{ section.id }}{{ id_append }}"
