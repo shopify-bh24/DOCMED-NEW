@@ -283,7 +283,7 @@
         "quicklook_style": "link",
         "show_count_timer": true,
         "color_swatchhover": false,
-        "enable_addtocart": true,
+        "enable_addtocart": false,
         "show_variants": true,
         "show_variant_label": true,
         "picker_type": "button",
