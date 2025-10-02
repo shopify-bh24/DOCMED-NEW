@@ -83,23 +83,24 @@ if product.price_varies
 
       {% if allow_add_cart and product.selected_or_first_available_variant %}
         <form method="post" action="/cart/add" class="product-card-form">
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-          <input type="hidden" name="quantity" value="1">
-          <button 
-            type="submit"
-            name="add"
-            formaction="/cart"
-            class="header_search_add_to_cart_button add-to-cart__submit button button--primary "
-            aria-label="{{ 'products.product.add_to_cart' | t }}"
-          >
-            <span class="cus-card-svg">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </span>
-          </button>
-        </form>
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <button 
+          type="submit"
+          name="add"
+          formaction="/cart"
+          class="header_search_add_to_cart_button add-to-cart__submit button button--primary "
+          aria-label="{{ 'products.product.add_to_cart' | t }}"
+        >
+          <span class="cus-card-svg">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 5V19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M5 12H19" stroke="#212121" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </button>
+      </form>
+      
       {% endif %}
       
       
@@ -137,43 +138,27 @@ if product.price_varies
 </div>
 
 <script>
-document.addEventListener('click', function(e) {
-  const button = e.target.closest('.add-to-cart__submit');
-  if (!button) return;
+  document.addEventListener('click', function(e) {
+    const button = e.target.closest('.add-to-cart__submit');
+    if (!button) return;
 
-  e.preventDefault();
+    e.preventDefault();
 
-  const form = button.closest('form');
-  const variantId = form?.querySelector('input[name="id"]')?.value;
-  if (!variantId) return;
+    const form = button.closest('form');
+    const variantId = form?.querySelector('input[name="id"]')?.value;
+    if (!variantId) return;
 
-  fetch('/cart/add.js', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id: variantId, quantity: 1 })
-  })
-  .then(res => res.json())
-  .then(data => {
-    console.log('Added to cart:', data);
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity: 1 })
+    })
+    .then(() => {
+      // Redirect to cart page after successful add
+      window.location.href = '/cart';
+    })
+    .catch(err => console.error('Error adding to cart:', err));
+  });
 
-    // 🔹 Step 1: Fetch new cart state
-    return fetch('/cart.js').then(res => res.json());
-  })
-  .then(cart => {
-    console.log('Cart updated:', cart);
-
-    // 🔹 Step 2: Update drawer (depends on theme)
-
-    // Dawn + most OS2.0 themes
-    document.dispatchEvent(new CustomEvent('cart:refresh', { detail: cart }));
-
-    // If your theme has cart-drawer element
-    const drawer = document.querySelector('cart-drawer');
-    if (drawer && typeof drawer.renderContents === 'function') {
-      drawer.renderContents(cart); // reloads cart HTML
-    }
-  })
-  .catch(err => console.error('Error adding to cart:', err));
-});
 
 </script>

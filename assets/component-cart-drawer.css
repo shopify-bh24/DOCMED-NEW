@@ -443,18 +443,18 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   min-width: 4.4rem;
   min-height: 4.4rem;
   box-shadow: 0 0 0 0.2rem rgba(var(--color-button), 0);
-  color: rgb(var(--color-foreground));
-  background-color: transparent;
+  color: white;
+  background: none;
   border: none;
   cursor: pointer;
   border-radius: var(--buttons-radius);
   position: absolute;
-  top: 0;
-  right: 5px;
+  top: 1rem;
+  right: 1rem;
   z-index: 1;
 }
 .drawer__close svg path{
-  stroke: rgb(var(--color-button-text))
+  stroke: #1d2e40
 }
 .is-empty .drawer__close svg path{
   stroke: rgb(var(--color-foreground))
