@@ -5282,7 +5282,7 @@ button:has(.cus-card-svg){
 .cust-img-prds--right .card_product_Price
 {
   width: fit-content;
-  position: absolute;
+  /* position: absolute; */
   bottom: 5%;  
 }
 
