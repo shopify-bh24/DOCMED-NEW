@@ -82,14 +82,14 @@
         "collapsible_row_zwCcxX",
         "collapsible_row_iyaA6R"
       ],
-      "name": "FAQ",
+      "name": "FAQ Kundenkonto",
       "settings": {
         "heading": "FAQ",
         "heading_size": "h0",
         "head_align": "left",
         "heading_color_scheme": "background-1",
         "head_space": false,
-        "description": "<p>Häufig gestellte Fragen</p>",
+        "description": "<p>Häufig gestellte Fragen zum Kundenkonto</p>",
         "description_style": "body",
         "layout": "row",
         "color_scheme": "",
