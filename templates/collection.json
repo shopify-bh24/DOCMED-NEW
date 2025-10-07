@@ -26,7 +26,6 @@
     },
     "cus_bread_crumb_sec_D4FWfF": {
       "type": "cus-bread-crumb-sec",
-      "disabled": true,
       "name": "Cus Breadcrumb",
       "settings": {
         "show_breadcrumb": false
