@@ -34,12 +34,6 @@
             "text_style": "body"
           }
         },
-        "custom_liquid_iDiJLm": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>\n.cust-list-it--block {\n  font-size: 14px;\n  line-height: 1.6;\n  color: #333;\n}\n\n.cust-list-it--item {\n  display: flex;\n  align-items: center;\n  margin-bottom: 4px;\n}\n\n.cust-list-it--item::before {\n  content: \"\";\n  display: inline-block;\n  width: 10px;\n  height: 10px;\n  margin-right: 8px;\n  background-color: #6bcf64; \n  border-radius: 50%;\n}\n</style>\n\n<div class=\"cust-list-it--block\">\n  <div class=\"cust-list-it--item\">Auf Lager / In 1-3 Tagen geliefert</div>\n  <div class=\"cust-list-it--item\">Über 36 mal gekauft in den letzten 14 Tagen</div>\n  <div class=\"cust-list-it--item\">Aktuell in 3 Warenkörben</div>\n</div>"
-          }
-        },
         "inventory_dEQL6L": {
           "type": "inventory",
           "disabled": true,
@@ -97,7 +91,6 @@
         "65491c3f-abb9-4bd5-9728-1b439626a36f",
         "title_jnyBi3",
         "text_XUPG6E",
-        "custom_liquid_iDiJLm",
         "inventory_dEQL6L",
         "price",
         "products_variants_7NcCUy",
