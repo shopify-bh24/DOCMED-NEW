@@ -239,11 +239,6 @@
           "custom_liquid": ""
         }
       },
-      "341186785192672687": {
-        "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
-        "disabled": false,
-        "settings": {}
-      },
       "15351435345818755577": {
         "type": "shopify://apps/pandectes-gdpr/blocks/banner/58c0baa2-6cc1-480c-9ea6-38d6d559556a",
         "disabled": true,
@@ -262,6 +257,11 @@
           "button_vertical_position": "lowest",
           "greeting_message": "Wir sind für Sie da und freuen uns auf Ihre Fragen oder Ihr Feedback."
         }
+      },
+      "341186785192672687": {
+        "type": "shopify://apps/seal-subscriptions/blocks/subscription-script-append/13b25004-a140-4ab7-b5fe-29918f759699",
+        "disabled": true,
+        "settings": {}
       }
     },
     "color_schemes": {
