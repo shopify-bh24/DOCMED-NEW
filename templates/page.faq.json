@@ -33,10 +33,54 @@
             "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_jqmHx7": {
+          "type": "collapsible_row",
+          "settings": {
+            "default_open": false,
+            "heading": "Frequently asked question",
+            "icon": "none",
+            "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zgQx46": {
+          "type": "collapsible_row",
+          "settings": {
+            "default_open": false,
+            "heading": "Frequently asked question",
+            "icon": "none",
+            "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_zwCcxX": {
+          "type": "collapsible_row",
+          "settings": {
+            "default_open": false,
+            "heading": "Frequently asked question",
+            "icon": "none",
+            "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_iyaA6R": {
+          "type": "collapsible_row",
+          "settings": {
+            "default_open": false,
+            "heading": "Frequently asked question",
+            "icon": "none",
+            "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
-        "collapsible_row_A8VkHH"
+        "collapsible_row_A8VkHH",
+        "collapsible_row_jqmHx7",
+        "collapsible_row_zgQx46",
+        "collapsible_row_zwCcxX",
+        "collapsible_row_iyaA6R"
       ],
       "name": "FAQ",
       "settings": {
