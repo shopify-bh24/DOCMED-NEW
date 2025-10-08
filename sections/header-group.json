@@ -25,18 +25,11 @@
           "settings": {
             "text": "Kostenfreier Versand ab 49€"
           }
-        },
-        "announcement_A3qiPT": {
-          "type": "announcement",
-          "settings": {
-            "text": "über 25.000 Produkte"
-          }
         }
       },
       "block_order": [
         "announcement_gpkid8",
-        "bb5e6f3d-a11a-4482-9e0f-7aba68edd82a",
-        "announcement_A3qiPT"
+        "bb5e6f3d-a11a-4482-9e0f-7aba68edd82a"
       ],
       "settings": {
         "show_line_separator": true,
