@@ -306,16 +306,16 @@
       }
     },
     "cart": {
-      "title": "Dein Warenkorb",
+      "title": "hr Warenkorb",
       "caption": "Artikel im Warenkorb",
       "remove_title": "{{ title }} entfernen",
       "subtotal": "Zwischensumme",
       "new_subtotal": "Neue Zwischensumme",
       "note": "Spezielle Bestellanweisungen",
       "checkout": "Auschecken",
-      "empty": "Dein Warenkorb ist leer",
-      "cart_error": "Beim Aktualisieren deines Warenkorbs ist ein Fehler aufgetreten. Bitte versuche es erneut.",
-      "cart_quantity_error_html": "Du kannst deinem Warenkorb nur {{ quantity }} Stück dieses Artikels hinzufügen.",
+      "empty": "Ihr Warenkorb ist leer",
+      "cart_error": "Beim Aktualisieren ihres Warenkorbs ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "cart_quantity_error_html": "Sie können Ihrem Warenkorb nur {{ quantity }} Stück dieses Artikels hinzufügen.",
       "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet",
       "taxes_included_but_shipping_at_checkout": "Inklusive Steuern, Versand wird beim Checkout berechnet",
       "taxes_included_and_shipping_policy_html": "Inklusive Steuern. <a href=\"{{ link }}\">Versand </a> wird beim Checkout berechnet",
@@ -330,7 +330,7 @@
       "update": "Aktualisieren",
       "login": {
         "title": "Hast du ein Konto?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logge dich ein</a>, damit es beim Checkout schneller geht.",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Loggen Sie sich ein</a>, damit es beim Checkout schneller geht.",
         "login": "Anmelden",
         "logintitle": "um schneller zur Kasse zu gehen."
       }
@@ -387,7 +387,7 @@
       "read_more": "Read more",
       "read_more_text": "Read more...",
       "onboarding_title": "Blog-Beitrag",
-      "onboarding_content": "Verschaffe deinen Kunden eine Übersicht über deinen Blog-Beitrag"
+      "onboarding_content": "Verschaffen Sie Ihren Kunden eine Übersicht über Ihren Blog-Beitrag."
     },
     "featured_collection": {
       "view_all": "Alle anzeigen",
@@ -400,7 +400,7 @@
     "collection_template": {
       "title": "Kategorie",
       "empty": "Keine Produkte gefunden",
-      "use_fewer_filters_html": "Verwende weniger Filter oder <a class=\"{{ class }}\" href=\"{{ link }}\">entferne alle</a>"
+      "use_fewer_filters_html": "Verwenden Sie weniger Filter oder <a class=\"{{ class }}\" href=\"{{ link }}\">entfernen Sie alle</a>."
     },
     "video": {
       "load_video": "Video laden: {{ description }}"
@@ -434,9 +434,9 @@
       },
       "product_variants": "Product variants",
       "total_items": "Total items",
-      "remove_all_items_confirmation": "Remove all {{ quantity }} items from your cart?",
-      "remove_all": "Remove all",
-      "cancel": "Cancel"
+      "remove_all_items_confirmation": "Möchten Sie alle {{ quantity }} Artikel aus Ihrem Warenkorb entfernen?",
+      "remove_all": "alle entfernen",
+      "cancel": "Stronierne"
     }
   },
   "localization": {
