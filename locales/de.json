@@ -458,7 +458,7 @@
     "account_fallback": "Konto",
     "activate_account": {
       "title": "Konto aktivieren",
-      "subtext": "Erstelle ein Passwort, um dein Konto zu aktiveren.",
+      "subtext": "Erstellen Sie ein Passwort, um Ihr Konto zu aktivieren.",
       "password": "Passwort",
       "password_confirm": "Passwort bestätigen",
       "submit": "Konto aktivieren",
@@ -485,7 +485,7 @@
       "cancel": "Abbrechen",
       "edit": "Bearbeiten",
       "delete": "Löschen",
-      "delete_confirm": "Bist du sicher, dass du diese Adresse löschen möchtest?"
+      "delete_confirm": "Sind Sie sicher, dass Sie diese Adresse löschen möchten?"
     },
     "log_in": "Einloggen",
     "log_out": "Abmelden",
@@ -510,12 +510,12 @@
       "payment_status": "Zahlungsstatus",
       "fulfillment_status": "Fulfillmentstatus",
       "total": "Gesamtsumme",
-      "none": "Du hast noch keine Bestellungen aufgegeben."
+      "none": "Sie haben noch keine Bestellungen aufgegeben."
     },
     "recover_password": {
       "title": "Zurücksetzen Ihres Passworts",
-      "subtext": "Wir werden ihnen eine E-Mail zum Zurücksetzen des Passworts schicken",
-      "success": "Wir haben dir eine E-Mail mit einem Link zum Aktualisieren deines Passworts geschickt."
+      "subtext": "Wir werden Ihnen eine E-Mail zum Zurücksetzen des Passworts schicken.",
+      "success": "Wir haben Ihnen eine E-Mail mit einem Link zum Aktualisieren Ihres Passworts geschickt."
     },
     "register": {
       "title": "Konto erstellen",
