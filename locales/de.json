@@ -684,6 +684,9 @@
       },
       "thank_you": {
         "login": "Anmelden"
+      },
+      "general": {
+        "contact_us_html": "Kontaktieren Sie uns für weitere Information"
       }
     }
   },
