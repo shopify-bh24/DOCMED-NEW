@@ -700,6 +700,11 @@
       "login_card": {
         "log_in": "Anmelden"
       }
+    },
+    "account_information": {
+      "verify_new_email_modal": {
+        "description": "Bitte geben Sie den an {{email}} gesendet code ein"
+      }
     }
   }
 }
