@@ -245,7 +245,7 @@
   },
   "templates": {
     "search": {
-      "no_results": "Keine Ergebnisse gefunden für \"{{ terms }}\". Überprüfe die Schreibweise oder versuche es mit einer anderen Suchanfrage.",
+      "no_results": "Für „{{ terms }}“ wurden keine Ergebnisse gefunden. Bitte überprüfen Sie die Schreibweise oder versuchen Sie es mit einer anderen Suchanfrage.",
       "articles": "Artikel",
       "collections": "Kategorien",
       "results_with_count": {
